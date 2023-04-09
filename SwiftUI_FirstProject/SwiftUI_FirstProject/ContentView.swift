@@ -2,11 +2,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isError = false
+    @State var isOnToggle = false
     
     var body: some View {
 //        Choose functions:
 //        showAlert()
-        showActionSheet()
+//        showActionSheet()
+        showToggle()
     }
     
     fileprivate func showAlert() -> some View {
@@ -36,6 +38,28 @@ struct ContentView: View {
                             // func for loading
                         }), .cancel()])
         })
+    }
+    
+    fileprivate func showToggle() -> some View {
+        VStack {
+            ZStack {
+                HStack {
+                    VStack {
+                        Text("Visa")
+                        Text("Cash")
+                        Spacer().frame(height: 300)
+                    }
+                    Spacer()
+                }
+                RoundedRectangle(cornerRadius: 10).fill(Color.yellow).offset(x: isOnToggle ? 100 : 0)
+                Text("Smth on the screan").offset(x: isOnToggle ? 100 : 0)
+            }
+            Toggle(isOn: $isOnToggle, label: {
+                Text("Показать текста")
+            }).padding()
+        }.animation(.spring(response: 0.5,
+                            dampingFraction: 0.7,
+                            blendDuration: 0.3))
     }
 }
 
