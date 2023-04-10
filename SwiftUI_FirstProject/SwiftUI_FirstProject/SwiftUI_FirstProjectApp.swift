@@ -4,7 +4,11 @@ import SwiftUI
 struct SwiftUI_FirstProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//  MARK:  Choose screane:
+//            Alert_View()
+//            ActionSheet_View()
+//            Toggle_View()
+            Picker_View()
         }
     }
 }
