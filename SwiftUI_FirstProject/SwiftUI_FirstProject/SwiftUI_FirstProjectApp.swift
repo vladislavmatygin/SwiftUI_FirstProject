@@ -10,7 +10,8 @@ struct SwiftUI_FirstProjectApp: App {
 //            Toggle_View()
 //            Picker_View()
 //            Slider_View()
-            Activity_View()
+//            Activity_View()
+            Navigation_View()
         }
     }
 }
